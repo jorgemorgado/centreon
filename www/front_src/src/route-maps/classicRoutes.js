@@ -8,6 +8,7 @@ import RemoteServerStepOne from "../route-components/remoteServerStep1";
 import RemoteServerStepTwo from "../route-components/remoteServerStep2";
 import RemoteServerStepThree from "../route-components/remoteServerStep3";
 import ServerConfigurationWizard from "../route-components/serverConfigurationWizard";
+import Tables from "../route-components/licence";
 
 const classicRoutes = [
   {
@@ -53,6 +54,11 @@ const classicRoutes = [
   {
     path: routeMap.serverConfigurationWizard,
     comp: ServerConfigurationWizard,
+    exact: true
+  },
+  {
+    path: routeMap.licence,
+    comp: Tables,
     exact: true
   }
 ];

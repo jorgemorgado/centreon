@@ -152,12 +152,6 @@ class TopHeader extends Component {
                     </div>
                     <ServiceStatusMenu data={servicesStatusData} />
                   </div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
                   <div class="wrap-right">
                     <Clock clockData={clockData} />
                     <UserMenu data={userData} />

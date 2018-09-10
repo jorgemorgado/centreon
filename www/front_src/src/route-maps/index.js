@@ -7,8 +7,8 @@ const routeMap = {
   remoteServerStep3: "/centreon/poller-wizard/4",
   pollerStep1: "/centreon/poller-wizard/5",
   pollerStep2: "/centreon/poller-wizard/6",
-  pollerStep3: "/centreon/poller-wizard/7"
-  //licence: "/centreon/licence"
+  pollerStep3: "/centreon/poller-wizard/7",
+  licence: "/centreon/licence"
 };
 
 export default routeMap;

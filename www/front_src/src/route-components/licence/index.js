@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 
 const tableBody = [{
@@ -32,82 +32,55 @@ const tableBody = [{
     installed : true
   }];
 
-  class TableRow extends React.Component {
-    render() {
-      const {
-        data
-      } = this.props;
-      const row = data.map((data) =>
-      <tr>
-         <td key={data.checked}>{data.checked}</td>
-         <td key={data.name}>{data.name}</td>
-         <td key={data.description}>{data.description}</td>
-         <td key={data.version}>{data.version}</td>
-         <td key={data.author}>{data.author}</td>
-         <td key={data.exporation}>{data.exporation}</td>
-         <td key={data.installed}>{data.installed}</td>
+  
+class TableRow extends React.Component {
+  render() {
+    const {
+      data
+    } = this.props;
+    const row = data.map((data) =>
+     <tr>
+        <td key={data.checked}>{data.checked === true ? "yes": "no"}</td>
+        <td key={data.name}>{data.name}</td>
+        <td key={data.description}>{data.description}</td>
+        <td key={data.version}>{data.version}</td>
+        <td key={data.author}>{data.author}</td>
+        <td key={data.expiration}>{data.expiration}</td>
+        <td key={data.installed}>{data.installed === true ? "y": "n"}</td>
       </tr>
-      );
-      return (
-        <span>{row}</span>
-      );
-    }
+    );
+    return (
+      <tbody>{row}</tbody>
+    );
+  }
+}
+
+class Table extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <table>
+        <thead>
+            <tr>
+              <td>Checked</td>
+              <td>Name</td>
+              <td>Description</td>
+              <td>Version</td>
+              <td>Author</td>
+              <td>Expiration</td>
+              <td>Installed</td>
+            </tr>
+        </thead>
+        <TableRow data={this.props.data} />
+      </table>
+    );
   }
   
-  class Table extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-    render() {
-      return (
-        <table>
-          <TableRow data={this.props.data} />
-        </table>
-      );
-    }
-  }
-
-  //ReactDOM.render(<Table data={tableBody} />, document.getElementById("root"));
+}
 
 
-// const TableRow = ({row}) => (
-//   <tr>
-//     <td key={row.checked}>{row.checked}</td>
-//     <td key={row.name}>{row.name}</td>
-//     <td key={row.description}>{row.description}</td>
-//     <td key={row.version}>{row.version}</td>
-//     <td key={row.author}>{row.author}</td>
-//     <td key={row.exporation}>{row.exporation}</td>
-//     <td key={row.installed}>{row.installed}</td>
-//   </tr>
-// );
+export default Table 
 
-// const Table = ({data}) => (
-//   <table>
-//     <thead>
-//       <tr>
-//         <td>Checked</td>
-//         <td>Name</td>
-//         <td>Description</td>
-//         <td>Version</td>
-//         <td>Author</td>
-//         <td>Exporation</td>
-//         <td>Installed</td>
-//       </tr>
-//     </thead>
-//     <tbody>
-//       {data.map(row => {
-//         <TableRow row={row} />
-//       })}
-//     </tbody>
-//   </table>
-// );
-// class Tables extends Component {
-//   render() {
-//     return (
-//       Table
-//     );
-//   }
-// };
 
-export default Table;
