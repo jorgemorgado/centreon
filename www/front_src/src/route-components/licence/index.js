@@ -1,86 +1,70 @@
-import React from "react";
+import React, { Component } from "react";
+import TableComponent from "../../components/table";
+import SearchComponent from "../../components/search";
+import ActionIcons from "../../components/actionsIcons";
 
 
 const tableBody = [{
-    id: "1",
-    checked: true,
-    name: "Central Map Web Client",
-    description: "Central Map Web Client lorem ipsum",
-    version: "18.9.0",
-    author: "Centreon Team",
-    expiration: "17.05.2019",
-    installed : true
-  },
-  {
-    id: "2",
-    checked: false,
-    name: "Central Business Activity Monitoring",
-    description: "Central Business Activity Monitoring lorem ipsum",
-    version: "18.9.0",
-    author: "Centreon",
-    expiration: "17.05.2019",
-    installed : false
-  },
-  {
-    id: "3",
-    checked: true,
-    name: "Central Map Web Client",
-    description: "Central Map Web Client lorem ipsum",
-    version: "18.9.0",
-    author: "Centreon Team",
-    expiration: "17.05.2019",
-    installed : true
-  }];
+  id: "1",
+  status:"checked",
+  checked: true,
+  name: "Central Map Web Client",
+  description: "Central Map Web Client lorem ipsum",
+  version: "18.9.0",
+  author: "Centreon Team",
+  expiration: "17.05.2019",
+  installed: true
+},
+{
+  id: "2",
+  status:"unchecked",
+  checked: false,
+  name: "Central Business Activity Monitoring",
+  description: "Central Business Activity Monitoring lorem ipsum",
+  version: "18.9.0",
+  author: "Centreon",
+  expiration: "17.05.2019",
+  installed: false
+},
+{
+  id: "3",
+  status:"checked",
+  checked: true,
+  name: "Central Map Web Client",
+  description: "Central Map Web Client lorem ipsum",
+  version: "18.9.0",
+  author: "Centreon Team",
+  expiration: "17.05.2019",
+  installed: true
+}];
 
-  
-class TableRow extends React.Component {
+
+const tableConfig = [
+  { label: 'All', key: 'checked', type: 'boolcheckbox' },
+  { label: 'Name', key: 'name', type: 'text' },
+  { label: 'Description', key: 'description', type: 'text' },
+  { label: 'Version', key: 'version', type: 'text' },
+  { label: 'Author', key: 'author', type: 'text' },
+  { label: 'Expiration', key: 'expiration', type: 'text' },
+  { label: 'Installed', key: 'installed', type: 'bool' }
+]
+
+class LicenceRoute extends Component {
   render() {
-    const {
-      data
-    } = this.props;
-    const row = data.map((data) =>
-     <tr>
-        <td key={data.checked}>{data.checked === true ? "yes": "no"}</td>
-        <td key={data.name}>{data.name}</td>
-        <td key={data.description}>{data.description}</td>
-        <td key={data.version}>{data.version}</td>
-        <td key={data.author}>{data.author}</td>
-        <td key={data.expiration}>{data.expiration}</td>
-        <td key={data.installed}>{data.installed === true ? "y": "n"}</td>
-      </tr>
-    );
     return (
-      <tbody>{row}</tbody>
-    );
+      <div>
+        <div>
+          <SearchComponent/>
+          <ActionIcons/>
+        </div>
+          {/* to discuss - action icons and table should be in form ?? */}
+        <TableComponent
+          configuration={tableConfig}
+          data={tableBody} />
+      </div>
+
+    )
   }
 }
 
-class Table extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <table>
-        <thead>
-            <tr>
-              <td>Checked</td>
-              <td>Name</td>
-              <td>Description</td>
-              <td>Version</td>
-              <td>Author</td>
-              <td>Expiration</td>
-              <td>Installed</td>
-            </tr>
-        </thead>
-        <TableRow data={this.props.data} />
-      </table>
-    );
-  }
-  
-}
-
-
-export default Table 
-
-
+export default LicenceRoute;

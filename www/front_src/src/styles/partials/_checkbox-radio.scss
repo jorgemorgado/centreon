@@ -1,0 +1,71 @@
+@mixin inputstyles() {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    left: 36px;
+    top: 3px;
+
+    & ~.input-control-label{
+        position: relative;
+        display: inline-block;
+        height: 23px;
+        min-width: 13px;
+        padding-left: 30px;
+        line-height: 23px;
+    }
+
+    &:focus ~ {
+        .custom-control-label::before {
+            box-shadow: none !important;
+        }
+    }
+
+    & ~.input-control-label::after,
+    & ~.input-control-label::before{
+        display: block;
+        content: ' ';
+        border:1px solid rgba(23, 56, 123, 1);
+        position: absolute;
+    }
+
+    & ~.input-control-label::before,
+    &:checked ~.input-control-label::before{
+        width: 20px;
+        height: 20px;
+        left: 0px;
+    }
+    & ~.input-control-label::after,
+    &:checked ~.input-control-label::after {
+        width: 12px;
+        height: 12px;
+        left: 4px;
+        top: 4px;
+    }
+
+    & ~.input-control-label::after {
+        background-color: rgba(23, 56, 123, 0);
+    }
+    &:checked ~.input-control-label::after {    
+        background-color: rgba(23, 56, 123, 1);
+
+    }
+}
+
+
+%radio-styles {
+    & ~.input-control-label::after,
+    & ~.input-control-label::before{
+        border-radius: 50px;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+    }
+}
+
+//checkboxes
+input[type=checkbox] {
+    @include inputstyles();
+}
+input[type=radio] {
+    @include inputstyles();
+    @extend %radio-styles;
+}

@@ -1,0 +1,49 @@
+//global
+
+table {
+    margin: 20px;
+    border-collapse: collapse;
+    width: calc(100% - 40px);
+    font-family: Open Sans,Arial,Tahoma,Helvetica,Sans-Serif;
+    border: 1px solid rgba(211, 211, 211, 0.4);
+
+    caption{
+        opacity: 0;
+    }
+    thead {
+        background-color: rgba(211, 211, 211, 1);
+        color: #FFF;
+        th {
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+    td {
+        text-align: center;
+       
+    }
+    tbody {
+        tr {
+            &:nth-child(even) {background-color: rgba(211, 211, 211, 0.2);}
+            &:nth-child(odd) {background-color: #FFF}
+        }
+        td {
+            padding: 15px; 
+        }
+    }
+}
+
+//TODO Edyta - create mixin for every table color with color and alpha variables
+table.green {
+    border: 1px solid rgba(43, 158, 147, 0.4);
+    thead {
+        background-color: rgba(43, 158, 147, 1);
+    }
+    tbody {
+        tr {
+            &:nth-child(even) {background-color: rgba(43, 158, 147, 0.2);}
+            &:nth-child(odd) {background-color: #FFF}
+        }
+    }
+}
