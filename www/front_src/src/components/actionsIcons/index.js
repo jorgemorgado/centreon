@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import routeMap from "../../route-maps";
 
 class ActionIcons extends Component {
   render() {
