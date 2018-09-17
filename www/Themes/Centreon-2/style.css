@@ -496,6 +496,15 @@ a.btc {
     background: #88b917 !important;
 }
 
+a.btc.bt_success.btn-new {
+    padding: 10px 15px;
+    font-size: 1rem;
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: 50px!important;
+    -moz-border-radius: 50px!important;
+    -webkit-border-radius: 50px!important;
+}
 .bt_danger {
     background: #e00b3d !important;
 }
@@ -2604,3 +2613,209 @@ ul.module_list {
 .ui-progressbar-value {
   background-color: #88b917 !important
 }
+
+
+/*new style*/
+
+table.ListTable.new-style input[type=radio] ~ .input-control-label::after, table.ListTable.new-style input[type=radio] ~ .input-control-label::before {
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+  }
+  
+  table.ListTable.new-style {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Open Sans, Arial, Tahoma, Helvetica, Sans-Serif;
+    border: 1px solid rgba(211, 211, 211, 0.4);
+  }
+  table.ListTable.new-style input[type=checkbox] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    left: 36px;
+    top: 3px;
+  }
+  table.ListTable.new-style input[type=checkbox] ~ .input-control-label {
+    position: relative;
+    display: inline-block;
+    height: 23px;
+    min-width: 13px;
+    padding-left: 30px;
+    line-height: 23px;
+  }
+  table.ListTable.new-style input[type=checkbox]:focus ~ .custom-control-label::before {
+    box-shadow: none !important;
+  }
+  table.ListTable.new-style input[type=checkbox] ~ .input-control-label::after, table.ListTable.new-style input[type=checkbox] ~ .input-control-label::before {
+    display: block;
+    content: " ";
+    border: 1px solid #17387b;
+    position: absolute;
+  }
+  table.ListTable.new-style input[type=checkbox] ~ .input-control-label::before, table.ListTable.new-style input[type=checkbox]:checked ~ .input-control-label::before {
+    width: 20px;
+    height: 20px;
+    left: 0px;
+  }
+  table.ListTable.new-style input[type=checkbox] ~ .input-control-label::after, table.ListTable.new-style input[type=checkbox]:checked ~ .input-control-label::after {
+    width: 12px;
+    height: 12px;
+    left: 4px;
+    top: 4px;
+  }
+  table.ListTable.new-style input[type=checkbox] ~ .input-control-label::after {
+    background-color: rgba(23, 56, 123, 0);
+  }
+  table.ListTable.new-style input[type=checkbox]:checked ~ .input-control-label::after {
+    background-color: #17387b;
+  }
+  table.ListTable.new-style input[type=radio] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    left: 36px;
+    top: 3px;
+  }
+  table.ListTable.new-style input[type=radio] ~ .input-control-label {
+    position: relative;
+    display: inline-block;
+    height: 23px;
+    min-width: 13px;
+    padding-left: 30px;
+    line-height: 23px;
+  }
+  table.ListTable.new-style input[type=radio]:focus ~ .custom-control-label::before {
+    box-shadow: none !important;
+  }
+  table.ListTable.new-style input[type=radio] ~ .input-control-label::after, table.ListTable.new-style input[type=radio] ~ .input-control-label::before {
+    display: block;
+    content: " ";
+    border: 1px solid #17387b;
+    position: absolute;
+  }
+  table.ListTable.new-style input[type=radio] ~ .input-control-label::before, table.ListTable.new-style input[type=radio]:checked ~ .input-control-label::before {
+    width: 20px;
+    height: 20px;
+    left: 0px;
+  }
+  table.ListTable.new-style input[type=radio] ~ .input-control-label::after, table.ListTable.new-style input[type=radio]:checked ~ .input-control-label::after {
+    width: 12px;
+    height: 12px;
+    left: 4px;
+    top: 4px;
+  }
+  table.ListTable.new-style input[type=radio] ~ .input-control-label::after {
+    background-color: rgba(23, 56, 123, 0);
+  }
+  table.ListTable.new-style input[type=radio]:checked ~ .input-control-label::after {
+    background-color: #17387b;
+  }
+  table.ListTable.new-style caption {
+    opacity: 0;
+  }
+  table.ListTable.new-style thead tr.ListHeader {
+    background-color: lightgray;
+    color: #FFF;
+  }
+  table.ListTable.new-style thead tr.ListHeader td {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+  }
+  table.ListTable.new-style thead tr.ListHeader input[type=checkbox] ~ .input-control-label::after, table.ListTable.new-style thead tr.ListHeader input[type=checkbox] ~ .input-control-label::before {
+    border: 1px solid white;
+  }
+  table.ListTable.new-style thead tr.ListHeader input[type=checkbox] ~ .input-control-label::after {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  table.ListTable.new-style thead tr.ListHeader input[type=checkbox]:checked ~ .input-control-label::after {
+    background-color: white;
+  }
+  table.ListTable.new-style td {
+    text-align: center;
+  }
+  table.ListTable.new-style tbody tr:nth-child(even) {
+    background-color: rgba(211, 211, 211, 0.2);
+  }
+  table.ListTable.new-style tbody tr:nth-child(odd) {
+    background-color: #FFF;
+  }
+  table.ListTable.new-style tbody td {
+    padding: 5px;
+  }
+  
+  table.ListTable.new-style.green {
+    border: 1px solid rgba(43, 158, 147, 0.4);
+  }
+  table.ListTable.new-style.green thead tr.ListHeader {
+    background-color: #2b9e93;
+  }
+  table.ListTable.new-style.green thead {
+    background-color: #2b9e93;
+  }
+  table.ListTable.new-style.green tbody tr:nth-child(even) {
+    background-color: rgba(43, 158, 147, 0.2);
+  }
+  table.ListTable.new-style.green tbody tr:nth-child(odd) {
+    background-color: #FFF;
+  }
+  table.ListTable.new-style.green input[type=checkbox] ~ .input-control-label::after, table.ListTable.new-style.green input[type=checkbox] ~ .input-control-label::before {
+    border: 1px solid #2b9e93;
+  }
+  table.ListTable.new-style.green input[type=checkbox] ~ .input-control-label::after {
+    background-color: rgba(43, 158, 147, 0);
+  }
+  table.ListTable.new-style.green input[type=checkbox]:checked ~ .input-control-label::after {
+    background-color: #2b9e93;
+  }
+  
+  table.ListTable.new-style.bluemarine {
+    border: 1px solid rgba(23, 56, 123, 0.4);
+  }
+  table.ListTable.new-style.bluemarine thead tr.ListHeader {
+    background-color: #17387b;
+  }
+  table.ListTable.new-style.bluemarine thead {
+    background-color: #17387b;
+  }
+  table.ListTable.new-style.bluemarine tbody tr:nth-child(even) {
+    background-color: rgba(23, 56, 123, 0.2);
+  }
+  table.ListTable.new-style.bluemarine tbody tr:nth-child(odd) {
+    background-color: #FFF;
+  }
+  table.ListTable.new-style.bluemarine input[type=checkbox] ~ .input-control-label::after, table.ListTable.new-style.bluemarine input[type=checkbox] ~ .input-control-label::before {
+    border: 1px solid #17387b;
+  }
+  table.ListTable.new-style.bluemarine input[type=checkbox] ~ .input-control-label::after {
+    background-color: rgba(23, 56, 123, 0);
+  }
+  table.ListTable.new-style.bluemarine input[type=checkbox]:checked ~ .input-control-label::after {
+    background-color: #17387b;
+  }
+  
+  table.ListTable.new-style.blue {
+    border: 1px solid rgba(67, 181, 217, 0.4);
+  }
+  table.ListTable.new-style.blue thead tr.ListHeader {
+    background-color: #43b5d9;
+  }
+  table.ListTable.new-style.blue thead {
+    background-color: #43b5d9;
+  }
+  table.ListTable.new-style.blue tbody tr:nth-child(even) {
+    background-color: rgba(67, 181, 217, 0.2);
+  }
+  table.ListTable.new-style.blue tbody tr:nth-child(odd) {
+    background-color: #FFF;
+  }
+  table.ListTable.new-style.blue input[type=checkbox] ~ .input-control-label::after, table.ListTable.new-style.blue input[type=checkbox] ~ .input-control-label::before {
+    border: 1px solid #43b5d9;
+  }
+  table.ListTable.new-style.blue input[type=checkbox] ~ .input-control-label::after {
+    background-color: rgba(67, 181, 217, 0);
+  }
+  table.ListTable.new-style.blue input[type=checkbox]:checked ~ .input-control-label::after {
+    background-color: #43b5d9;
+  }

@@ -61,7 +61,6 @@ foreach ($modules as &$module) {
         $module['installed'] = _('No');
     }
 }
-
 $tpl->assign('p', $p);
 $tpl->assign('modules', $modules);
 $tpl->assign('canUpgradeOrInstallModules', $canUpgradeOrInstallModules);
