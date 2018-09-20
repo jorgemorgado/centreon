@@ -48,7 +48,7 @@ class RemoteServerFormStepOne extends Component {
       <div className="form-wrapper">
         <div className="form-inner">
           <div className="form-heading">
-            <h2 className="form-title mb-2">Server Configuration</h2>
+            <h2 className="form-title mb-2">Remote Server configuration</h2>
           </div>
           <form autocomplete="off" onSubmit={handleSubmit(onSubmit)}>
             <Field
@@ -57,7 +57,7 @@ class RemoteServerFormStepOne extends Component {
               checked={inputTypeManual}
               value={true}
               component={RadioField}
-              label="Manual input"
+              label="Create new Remote Server"
             />
             {inputTypeManual ? (
               <div>
@@ -73,14 +73,14 @@ class RemoteServerFormStepOne extends Component {
                   component={InputField}
                   type="text"
                   placeholder=""
-                  label="Server IP Address:"
+                  label="Server IP address:"
                 />
                 <Field
                     name="db_user"
                     component={InputField}
                     type="text"
                     placeholder=""
-                    label="Database user:"
+                    label="Database username:"
                 />
                 <Field
                     name="db_password"
@@ -94,7 +94,7 @@ class RemoteServerFormStepOne extends Component {
                   component={InputField}
                   type="text"
                   placeholder=""
-                  label="Centreon Central IP Address:"
+                  label="Centreon Central IP address, as seen by this server:"
                 />
               </div>
             ) : null}
@@ -104,7 +104,7 @@ class RemoteServerFormStepOne extends Component {
               checked={!inputTypeManual}
               value={false}
               component={RadioField}
-              label="Please select a server"
+              label="Select a Remote Server"
             />
             {!inputTypeManual ? (
               <div>
@@ -136,7 +136,7 @@ class RemoteServerFormStepOne extends Component {
                   component={InputField}
                   type="text"
                   placeholder=""
-                  label="Database user:"
+                  label="Database username:"
                 />
                 <Field
                   name="db_password"
@@ -150,7 +150,7 @@ class RemoteServerFormStepOne extends Component {
                   component={InputField}
                   type="text"
                   placeholder=""
-                  label="Centreon Central IP Address:"
+                  label="Centreon Central IP address, as seen by this server:"
                 />
               </div>
             ) : null}
