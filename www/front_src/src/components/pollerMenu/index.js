@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 const getPollerStatusIcon = issues => {
   let result = (
@@ -30,6 +31,14 @@ const getPollerStatusIcon = issues => {
 };
 
 class PollerMenu extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+  }
+
   state = {
     toggled: false
   };
@@ -40,6 +49,35 @@ class PollerMenu extends Component {
       toggled: !toggled
     });
   };
+
+   ///outside click
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  /**
+   * Set the wrapper ref
+   */
+  setWrapperRef(node) {
+    this.wrapperRef = node;
+  }
+
+  /**
+   * Alert if clicked on outside of element
+   */
+  handleClickOutside(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.setState({
+        toggled: false
+      });
+    }
+  }
+  ////end outside click
 
   render() {
     const { data } = this.props;
@@ -59,7 +97,7 @@ class PollerMenu extends Component {
           <span class="wrap-left-icon__name">Pollers</span>
         </span>
         {statusIcon}
-        <span class="toggle-submenu-arrow" onClick={this.toggle.bind(this)} />
+        <span ref={this.setWrapperRef}  class="toggle-submenu-arrow" onClick={this.toggle.bind(this)} >{this.props.children}</span>
         <div class="submenu pollers">
           <div class="submenu-inner">
             <ul class="submenu-items list-unstyled">
@@ -126,3 +164,8 @@ class PollerMenu extends Component {
 }
 
 export default PollerMenu;
+
+PollerMenu.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+

@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 import numeral from "numeral";
+import PropTypes from 'prop-types';
 
 class HostMenu extends Component {
+  constructor(props) {
+    super(props);
+
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+  }
+
   state = {
     toggled: false
   };
@@ -12,6 +20,36 @@ class HostMenu extends Component {
       toggled: !toggled
     });
   };
+
+   ///outside click
+
+   componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  /**
+   * Set the wrapper ref
+   */
+  setWrapperRef(node) {
+    this.wrapperRef = node;
+  }
+
+  /**
+   * Alert if clicked on outside of element
+   */
+  handleClickOutside(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.setState({
+        toggled: false
+      });
+    }
+  }
+  ////end outside click
+
 
   render() {
     const { data } = this.props;
@@ -49,7 +87,7 @@ class HostMenu extends Component {
           </a>
         </span>
 
-        <span class="toggle-submenu-arrow" onClick={this.toggle.bind(this)} />
+        <span ref={this.setWrapperRef} class="toggle-submenu-arrow" onClick={this.toggle.bind(this)} >{this.props.children}</span>
         <div class="submenu host">
           <div class="submenu-inner">
             <ul class="submenu-items list-unstyled">
@@ -110,3 +148,6 @@ class HostMenu extends Component {
 }
 
 export default HostMenu;
+HostMenu.propTypes = {
+  children: PropTypes.element.isRequired,
+};
