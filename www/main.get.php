@@ -203,7 +203,10 @@ if ($acl_page == 1 || $acl_page == 2) {
 include_once "./include/core/header/htmlHeader.php";
 
 ?>
-<div id="centreonMsg" class="react-centreon-message"></div>
+<!-- <div id="centreonMsg" class="react-centreon-message"></div> -->
+<!-- I had to deleted this element because it was duplicated with another existing error message ( case when the user without any ACL is connecting to centreon) 
+please use <div class="msg" align="center">You are not allowed to reach this page</div> for the errot messages  -->
+
 
 <script type='text/javascript'>
     //saving the user locale
